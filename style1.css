@@ -1,0 +1,49 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allow boxes to wrap to the next line */
+}
+
+.box {
+  width: 20%; /* Adjust the width to fit 10 boxes in a row */
+  height: 25vh; /* Adjust the height as needed */
+  margin: 10px;
+  box-shadow: 0 0 0 5px white;
+  transition: 1s;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.box:hover {
+  transform: scale(1.3);
+  z-index: 2;
+}
+
+.container:hover .box:not(:hover) {
+  filter: grayscale(100%) opacity(24%);
+}
+
+.container .box:hover {
+  filter: grayscale(0%) opacity(100%);
+}

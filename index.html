@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <link rel="stylesheet" href="index.css">
+    
+</head>
+<body>
+    <div class="container">
+        <video id="video-background" autoplay loop muted>
+            <source src="Pictures/Pokemon-Emerald-waterfall..mp4" type="video/mp4">
+        </video>
+
+        <nav>
+            <ul>
+                <li id="aboutLink">About Pokemon</li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <a href="selection.html">
+                <h1 class="button" id="startJourney" onmouseover="startShake(); playAudio();" onmouseout="stopShake(); pauseAudio()">Start Journey</h1>
+            </a>
+        </div>
+
+        <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+    </div>
+
+    <div id="aboutText" class="about-text">The world of Pokemon is inhabited by creatures known as Pokemon, which humans, known as Pokemon Trainers, catch and train to battle each other for sport. The main goal for many Trainers is to become a Pokemon Master by capturing and training a diverse team of Pokemon and defeating other Trainers in battles.
+        
+    </div>
+
+    <audio id="buttonAudio" src="Pictures/pokemon-theme-song-original2.mp3"></audio>
+
+    <script>
+        function startShake() {
+            document.getElementById('startJourney').classList.add('shake');
+        }
+
+        function stopShake() {
+            document.getElementById('startJourney').classList.remove('shake');
+        }
+
+        function playAudio() {
+            var audio = document.getElementById('buttonAudio');
+            audio.play();
+        }
+
+        function pauseAudio() {
+            var audio = document.getElementById('buttonAudio');
+            audio.pause();
+            audio.currentTime = 0; // Reset the audio to the beginning
+        }
+
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var m = date.getMinutes();
+            var s = date.getSeconds();
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+
+            h = (h < 10) ? "0" + h : h;
+            m = (m < 10) ? "0" + m : m;
+            s = (s < 10) ? "0" + s : s;
+
+            var time = h + ":" + m + ":" + s + " " + session;
+            document.getElementById("MyClockDisplay").innerText = time;
+            document.getElementById("MyClockDisplay").textContent = time;
+
+            setTimeout(showTime, 1000);
+        }
+
+        showTime();
+
+        // Add the new script here
+        document.getElementById('startJourney').addEventListener('click', function() {
+            alert('Your Pokemon journey is about to begin!');
+        });
+
+        // Add event listener to show about text on link hover
+        var aboutLink = document.getElementById("aboutLink");
+        var aboutText = document.getElementById("aboutText");
+
+        aboutLink.addEventListener("mouseover", function() {
+            aboutText.style.display = "block";
+        });
+
+        aboutLink.addEventListener("mouseout", function() {
+            aboutText.style.display = "none";
+        });
+    </script>
+</body>
+</html>

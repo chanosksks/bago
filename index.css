@@ -1,0 +1,107 @@
+body, html {
+    margin: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+}
+
+nav {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 60px; /* Adjusted margin for the "About" link */
+    color: white;
+    font-size: 3em; /* Increased font size for the "About" link */
+    cursor: default;
+}
+
+.about-text {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 30px;
+    color: white;
+    font-size: 2em;
+    max-width: 30%; /* Set maximum width for better readability */
+    text-align: justify; /* Align the text to the right */
+}
+
+.content {
+    position: absolute;
+    font-size: 2em;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.5em; /* Increased font size for the "Start Journey" button */
+    background-color: #101011;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #a2a0a0;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25%, 75% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+.clock {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #fbfdfd;
+    font-size: 60px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 7px;
+}

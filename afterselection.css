@@ -1,0 +1,42 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px; /* Limit maximum width of container */
+  overflow: hidden; /* Hide overflow to prevent scroll */
+}
+
+.box {
+  width: calc(30% - 20px); /* Adjust the width for three boxes with margin */
+  height: 90vh; /* Adjust the height as needed */
+  margin: 10px;
+  transition: 1s;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Use contain to fit the images within the boxes */
+}
+
+.box:hover {
+  transform: scale(1.3);
+  z-index: 2;
+}
